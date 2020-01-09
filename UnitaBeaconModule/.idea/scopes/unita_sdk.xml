@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="unita-sdk" pattern="src[UnitaBeacon]:at.floriantaurer.unitabeaconmodule..*||src[UnitaBeacon]:at.floriantaurer.unitabeaconmodule.utils..*" />
+</component>

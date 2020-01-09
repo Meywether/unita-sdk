@@ -1,0 +1,14 @@
+include ':UnitaBeacon'
+include ':sonitalk-sdk'
+project(':sonitalk-sdk').projectDir = new File(getSoniTalkDir())
+
+def getSoniTalkDir() {
+    Properties properties = new Properties()
+    properties.load(new File(rootDir.absolutePath + "/local.properties").newDataInputStream())
+    def externalModuleDir = properties.getProperty('sonitalk.dir', null)
+    if (externalModuleDir == null) {
+        throw new GradleException(
+                "Module location not found. Define location with module.dir in the local.properties file!")
+    }
+    return externalModuleDir
+}
